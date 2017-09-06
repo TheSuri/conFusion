@@ -21,7 +21,7 @@ var favoriteRouter = require('./routes/favoriteRouter');
 
 var app = express();
 
-app.use(cors({origin: '*'}));
+app.use(cors({origin: 'https://ec2-13-56-19-106.us-west-1.compute.amazonaws.com:3443'}));
 app.use(passport.initialize());
 
 
