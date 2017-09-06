@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var authenticate = require('./authenticate');
 var config = require('./config');
-var cors= require('cors');
+//var cors= require('cors');
 // Secure traffic only
 
 var routes = require('./routes/index');
@@ -21,7 +21,7 @@ var favoriteRouter = require('./routes/favoriteRouter');
 
 var app = express();
 
-app.use(cors({origin: 'null'}));
+//app.use(cors({origin: 'null'}));
 app.use(passport.initialize());
 
 
