@@ -55,6 +55,13 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
 app.use('/bower_components', express.static(path.join(__dirname, 'Frontend/bower_components')));
 app.use('/styles', express.static(path.join(__dirname, 'Frontend/dist/styles')));
 app.use('/scripts', express.static(path.join(__dirname, 'Frontend/dist/scripts')));
