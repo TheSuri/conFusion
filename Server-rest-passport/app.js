@@ -27,12 +27,12 @@ app.use(passport.initialize());
 
 
 app.all('*', function(req, res, next){
-    console.log('req start: ',req.secure, req.hostname, req.url, app.get('port'));
+    console.log('req start: ',req.secure, 'ec2-13-56-19-106.us-west-1.compute.amazonaws.com', req.url, app.get('port'));
   if (req.secure) {
     return next();
   };
 
- res.redirect('https://'+req.hostname+':'+app.get('secPort')+req.url);
+ res.redirect('https://'+'ec2-13-56-19-106.us-west-1.compute.amazonaws.com'+':'+app.get('secPort')+req.url);
 });
 
 mongoose.connect(config.mongoUrl);
