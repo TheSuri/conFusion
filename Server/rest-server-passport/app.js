@@ -53,6 +53,15 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/bower_components', express.static(path.join(__dirname, 'Frontend/bower_components')));
+app.use('/styles', express.static(path.join(__dirname, 'Frontend/dist/styles')));
+app.use('/scripts', express.static(path.join(__dirname, 'Frontend/dist/scripts')));
+app.use('/views', express.static(path.join(__dirname, 'Frontend/dist/views')));
+app.use('/images', express.static(path.join(__dirname, 'Frontend/dist/images')));
+app.use('/fonts', express.static(path.join(__dirname, 'Frontend/dist/fonts')));
+
+
+
 app.use('/', routes);
 app.use('/users', users);
 app.use('/dishes',dishRouter);
